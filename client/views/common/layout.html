@@ -1,0 +1,19 @@
+<template name="mapLayout">
+    <div class="navbar navbar-default navbar-fixed-top" role="navigation">
+        {{> yield region='topmenu'}}
+    </div>
+
+    <div class="container">
+        {{> yield}}
+    </div>
+
+    <div class="footer">
+        <div class="container">
+            <p class="text-muted">Place sticky footer content here.</p>
+        </div>
+    </div>
+</template>
+
+<template name="404">
+    <p>404 not found!</p>
+</template>

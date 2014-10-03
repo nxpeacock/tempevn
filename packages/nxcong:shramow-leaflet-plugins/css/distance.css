@@ -34,13 +34,13 @@
 
 .leaflet-control-distance-edit {
 	/* http://openclipart.org/detail/114727/ftview-ruler-by-anonymous */
-	background-image: url('measure.png');
+	background-image: url('packages/nxcong_shramow-leaflet-plugins/css/measure.png');
 }
 
 .leaflet-control-distance-delete {
 	margin-left: 5px;
 	/* Based on http://openclipart.org/detail/34729/architetto----tasto-8-by-anonymous */
-	background-image: url('cross.png');
+	background-image: url('packages/nxcong_shramow-leaflet-plugins/css/cross.png');
 }
 
 a.leaflet-control-distance-active {

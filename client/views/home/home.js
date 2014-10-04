@@ -3,17 +3,21 @@ usersLocationCollection = new Meteor.Collection(null);
 
 Template.home.created = function(){
     L.Icon.Default.imagePath = 'packages/boustanihani_meteor-leaflet/images';
+
 }
 
 Template.home.rendered = function () {
     $(document).ready(function () {
-        Meteor.setTimeout(function () {
-
+        setTimeout(function () {
+            $(window).resize(function() {
+                $('#map').css('height', window.innerHeight - 60 - 58);
+            });
+            $(window).resize();
             iMAP = L.map('map', {
                 doubleClickZoom: false
             }).setView([21.0247, 105.8413], 12);
             iMAP.locate({setView: true, maxZoom: 16});
-            var OpenStreetMap_DE = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
+            OpenStreetMap_DE = L.tileLayer('http://{s}.tile.openstreetmap.de/tiles/osmde/{z}/{x}/{y}.png', {
                 attribution: '&copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>'
             }).addTo(iMAP);
             var templeMarker = L.AwesomeMarkers.icon({
@@ -43,9 +47,6 @@ Template.home.rendered = function () {
             L.marker([21.011513, 105.905882], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             iMAP.on('locationfound', onLocationFound);
             iMAP.on('locationerror', onLocationError);
-            iMAP.on('load',function(e){
-                console.log(e)
-            })
         }, 500);
     })
 

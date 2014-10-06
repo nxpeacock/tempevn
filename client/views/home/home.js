@@ -24,6 +24,13 @@ Template.home.rendered = function () {
                 icon: 'asterisk',
                 markerColor: 'green'
             });
+
+            var temples = Temples.find().fetch();
+            _.each(temples,function(t){
+                var popUpContent = Blaze.toHTMLWithData(Template.templeSummary,t);
+                L.marker([t.lat, t.long], {icon: templeMarker}).addTo(iMAP)
+                    .bindPopup(popUpContent);
+            })
             //var ggl = new L.Google();
             //var ggl2 = new L.Google('TERRAIN');
             //var bing = new L.BingLayer("ArXrKUpYgqfhkBDY9Fdm6cONGlQVbYqgvR882HR4OjfVqPorE2j3TnCzoExJP61K");
@@ -32,7 +39,7 @@ Template.home.rendered = function () {
 
             //iMAP.addControl(new L.Control.Layers({'OSM': OpenStreetMap_DE, 'Google Terrain': ggl2}, {}));
 
-            L.marker([21.104714, 105.925951], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
+/*            L.marker([21.104714, 105.925951], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             L.marker([21.024578, 105.802768], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             L.marker([21.035708, 105.8331215], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             L.marker([21.049374, 105.838712], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
@@ -44,7 +51,7 @@ Template.home.rendered = function () {
             L.marker([21.089615, 105.804301], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             L.marker([21.029171, 105.836646], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
             L.marker([21.029080, 105.837499], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
-            L.marker([21.011513, 105.905882], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');
+            L.marker([21.011513, 105.905882], {icon: templeMarker}).addTo(iMAP).bindPopup('Chùa Việt Nam');*/
             iMAP.on('locationfound', onLocationFound);
             iMAP.on('locationerror', onLocationError);
         }, 500);

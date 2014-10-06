@@ -13,6 +13,10 @@ this.Router.map(function() {
         controller: this.HomeController,
         path: '/'
     });
+    this.route('templeDetail',{
+        controller : this.TempleDetailController,
+        path : '/chua-phat-giao/:_id'
+    });
     this.route('admin_temple',{
         controller : this.AdminTempleController,
         path :'/quan-tri/chua-phat-giao'

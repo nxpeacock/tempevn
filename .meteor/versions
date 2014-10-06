@@ -1,4 +1,4 @@
-aldeed:autoform@3.1.0
+aldeed:autoform@3.2.0
 aldeed:collection2@2.1.0
 aldeed:simple-schema@1.0.3
 andrasph:random-color@0.0.1
@@ -13,7 +13,7 @@ boilerplate-generator@1.0.0
 boustanihani:meteor-leaflet@0.7.4
 callback-hook@1.0.0
 check@1.0.1
-chrismbeckett:fontawesome4@4.2.1
+chrismbeckett:fontawesome4@4.2.2
 ctl-helper@1.0.3
 ctl@1.0.1
 ddp@1.0.9
@@ -61,5 +61,6 @@ tracker@1.0.2
 ui@1.0.3
 underscore@1.0.0
 url@1.0.0
+vjau:xml2js@4.4.0
 webapp-hashing@1.0.0
 webapp@1.1.2

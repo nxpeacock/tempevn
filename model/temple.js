@@ -43,3 +43,7 @@ Schemas.Temple = new SimpleSchema({
 });
 
 Temples.attachSchema(Schemas.Temple);
+
+Temples.allow({
+    insert : function(){return true;}
+})
